@@ -9,20 +9,42 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="0">
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="166dp"
+            android:layout_height="170dp"
+            android:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:layout_marginTop="35dp"
+            android:text="Android WallPapers"
+            android:textColor="@color/wallpaperprimary"
+            android:textSize="35dp"
+            android:textStyle="bold" />
 
 
     </LinearLayout>
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:gravity="center"
-        android:textStyle="bold"
+        android:text="Welcome to Dreams Creative"
         android:textColor="@color/wallpaperprimary"
         android:textSize="25dp"
-        android:text="Welcome to Dreams Creative"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
