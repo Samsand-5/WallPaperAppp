@@ -20,6 +20,8 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
+        replaceFragment(HomeFragment())
+
         binding.icHome.setOnClickListener{
             replaceFragment(HomeFragment())
         }
