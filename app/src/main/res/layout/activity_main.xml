@@ -8,21 +8,23 @@
 
     
     <FrameLayout
+        android:id="@+id/fragmentReplace"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/bottomnavBar"/>
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNavBar"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:id="@+id/bottomnavBar"
+        android:id="@+id/bottomNavBar"
         android:background="@drawable/bottom_shape"
         android:layout_height="50dp">
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:id="@+id/ic_home"
             android:layout_weight="1">
 
             <ImageView
@@ -36,6 +38,7 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:id="@+id/ic_download"
             android:layout_weight="1">
 
             <ImageView
