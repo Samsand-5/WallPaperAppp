@@ -7,18 +7,20 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.wallpaperapp.R
 import com.example.wallpaperapp.databinding.FragmentHomeBinding
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 class HomeFragment : Fragment() {
 
     lateinit var binding: FragmentHomeBinding
+    lateinit var db: FirebaseFirestore
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(layoutInflater,container,false)
-
+        db = FirebaseFirestore.getInstance()
 
         return binding.root
     }
