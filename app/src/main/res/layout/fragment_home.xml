@@ -5,22 +5,43 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.HomeFragment">
 
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="50dp"
-       android:gravity="center_vertical"
-       android:background="#E8E8E8">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-       <TextView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_marginStart="20dp"
-           android:layout_marginLeft="20dp"
-           android:text="Amoled Wallpaers"
-           android:textStyle="bold"
-           android:textSize="29dp"
-           android:textColor="@color/wallpaperprimary"/>
+        <LinearLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:gravity="center_vertical"
+            android:background="#E8E8E8">
 
-   </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:text="Amoled Wallpaers"
+                android:textStyle="bold"
+                android:textSize="29dp"
+                android:textColor="@color/wallpaperprimary"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bom"
+            android:orientation="vertical"
+            android:layout_below="@id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_height="wrap_content">
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
 
 </FrameLayout>
