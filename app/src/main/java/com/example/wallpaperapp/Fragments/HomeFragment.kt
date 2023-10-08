@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wallpaperapp.Model.BomModel
 import com.example.wallpaperapp.R
 import com.example.wallpaperapp.databinding.FragmentHomeBinding
@@ -36,6 +37,9 @@ class HomeFragment : Fragment() {
             }
 
         }
+
+        binding.rcvBom.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, true)
+        binding.rcvBom.adapter
 
         return binding.root
     }
