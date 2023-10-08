@@ -20,7 +20,13 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(layoutInflater,container,false)
+
         db = FirebaseFirestore.getInstance()
+
+        db.collection("bestofmonth").addSnapshotListener { value, error ->
+            val listBestOfTheMonth = arrayListOf<>()
+            val data = value.toObjects()
+        }
 
         return binding.root
     }
