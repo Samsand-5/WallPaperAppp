@@ -1,10 +1,12 @@
 package com.example.wallpaperapp.Fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.wallpaperapp.Model.BomModel
 import com.example.wallpaperapp.R
 import com.example.wallpaperapp.databinding.FragmentHomeBinding
 import com.google.firebase.firestore.FirebaseFirestore
@@ -24,8 +26,15 @@ class HomeFragment : Fragment() {
         db = FirebaseFirestore.getInstance()
 
         db.collection("bestofmonth").addSnapshotListener { value, error ->
-            val listBestOfTheMonth = arrayListOf<>()
-            val data = value.toObjects()
+            val listBestOfTheMonth = arrayListOf<BomModel>()
+            val data = value?.toObjects(BomModel::class.java)
+            listBestOfTheMonth.addAll(data!!)
+
+            for (i in listBestOfTheMonth)
+            {
+                Log.e("@@@@", "onCreateView: "+i )
+            }
+
         }
 
         return binding.root
