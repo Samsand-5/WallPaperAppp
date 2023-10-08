@@ -31,11 +31,6 @@ class HomeFragment : Fragment() {
             val data = value?.toObjects(BomModel::class.java)
             listBestOfTheMonth.addAll(data!!)
 
-            for (i in listBestOfTheMonth)
-            {
-                Log.e("@@@@", "onCreateView: "+i )
-            }
-
         }
 
         binding.rcvBom.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, true)
