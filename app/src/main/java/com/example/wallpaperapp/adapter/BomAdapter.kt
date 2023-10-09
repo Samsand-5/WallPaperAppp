@@ -1,19 +1,23 @@
 package com.example.wallpaperapp.adapter
 
+import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.wallpaperapp.Model.BomModel
+import com.example.wallpaperapp.R
 
-class BomAdapter : RecyclerView.Adapter<BomAdapter.bomViewHolder>() {
+class BomAdapter(val requireContext: Context, val listBestOfTheMonth: ArrayList<BomModel>) : RecyclerView.Adapter<BomAdapter.bomViewHolder>() {
 
     inner class bomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): bomViewHolder {
-        TODO("Not yet implemented")
+        return bomViewHolder(LayoutInflater.from(requireContext).inflate(R.layout.item_bom,parent,false))
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return listBestOfTheMonth.size
     }
 
     override fun onBindViewHolder(holder: bomViewHolder, position: Int) {
