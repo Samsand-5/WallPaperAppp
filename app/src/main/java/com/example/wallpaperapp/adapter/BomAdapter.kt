@@ -21,6 +21,6 @@ class BomAdapter(val requireContext: Context, val listBestOfTheMonth: ArrayList<
     }
 
     override fun onBindViewHolder(holder: bomViewHolder, position: Int) {
-        TODO("Not yet implemented")
+
     }
 }
