@@ -16,7 +16,6 @@ class HomeFragment : Fragment() {
 
     lateinit var binding: FragmentHomeBinding
     lateinit var db: FirebaseFirestore
-    lateinit var listBestOfTheMonth: ArrayList<BomModel>
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,14 +26,14 @@ class HomeFragment : Fragment() {
         db = FirebaseFirestore.getInstance()
 
         db.collection("bestofmonth").addSnapshotListener { value, error ->
-            listBestOfTheMonth = arrayListOf<BomModel>()
+            val listBestOfTheMonth = arrayListOf<BomModel>()
             val data = value?.toObjects(BomModel::class.java)
             listBestOfTheMonth.addAll(data!!)
 
+            binding.rcvBom.layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, true)
+            binding.rcvBom.adapter = BomAdapter(requireContext(),listBestOfTheMonth)
         }
-
-        binding.rcvBom.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, true)
-        binding.rcvBom.adapter = BomAdapter(requireContext(),listBestOfTheMonth)
 
         return binding.root
     }
