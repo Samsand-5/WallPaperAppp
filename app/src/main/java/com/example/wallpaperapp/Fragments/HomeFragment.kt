@@ -31,7 +31,7 @@ class HomeFragment : Fragment() {
             listBestOfTheMonth.addAll(data!!)
 
             binding.rcvBom.layoutManager =
-                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, true)
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             binding.rcvBom.adapter = BomAdapter(requireContext(),listBestOfTheMonth)
         }
 
