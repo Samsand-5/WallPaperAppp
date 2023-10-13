@@ -35,6 +35,17 @@ class HomeFragment : Fragment() {
             binding.rcvBom.adapter = BomAdapter(requireContext(),listBestOfTheMonth)
         }
 
+
+        db.collection("thecolortone").addSnapshotListener { value, error ->
+            val listBestOfTheMonth = arrayListOf<BomModel>()
+            val data = value?.toObjects(BomModel::class.java)
+            listBestOfTheMonth.addAll(data!!)
+
+            binding.rcvBom.layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            binding.rcvBom.adapter = BomAdapter(requireContext(),listBestOfTheMonth)
+        }
+
         return binding.root
     }
 
