@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wallpaperapp.Model.BomModel
+import com.example.wallpaperapp.Model.ColorToneModel
 import com.example.wallpaperapp.adapter.BomAdapter
 import com.example.wallpaperapp.databinding.FragmentHomeBinding
 import com.google.firebase.firestore.FirebaseFirestore
@@ -37,13 +38,9 @@ class HomeFragment : Fragment() {
 
 
         db.collection("thecolortone").addSnapshotListener { value, error ->
-            val listBestOfTheMonth = arrayListOf<BomModel>()
-            val data = value?.toObjects(BomModel::class.java)
-            listBestOfTheMonth.addAll(data!!)
-
-            binding.rcvBom.layoutManager =
-                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-            binding.rcvBom.adapter = BomAdapter(requireContext(),listBestOfTheMonth)
+            val listTheColorTone = arrayListOf<ColorToneModel>()
+            val data = value?.toObjects(ColorToneModel::class.java)
+            listTheColorTone.addAll(data!!)
         }
 
         return binding.root
