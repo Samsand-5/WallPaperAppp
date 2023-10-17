@@ -1,6 +1,7 @@
 package com.example.wallpaperapp.adapter
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,6 +28,6 @@ class ColorToneAdapter(val requireContext: Context, val listTheColorTone: ArrayL
 
     override fun onBindViewHolder(holder: ColorToneViewHolder, position: Int) {
         val color = listTheColorTone[position].color
-        holder.cardBack.setCardBackgroundColor()
+        holder.cardBack.setCardBackgroundColor(Color.parseColor(color!!))
     }
 }
