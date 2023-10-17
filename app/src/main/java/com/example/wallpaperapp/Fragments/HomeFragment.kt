@@ -41,6 +41,10 @@ class HomeFragment : Fragment() {
             val listTheColorTone = arrayListOf<ColorToneModel>()
             val data = value?.toObjects(ColorToneModel::class.java)
             listTheColorTone.addAll(data!!)
+
+            binding.rcvTct.layoutManager =
+                LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
+            binding.rcvTct.adapter =
         }
 
         return binding.root
