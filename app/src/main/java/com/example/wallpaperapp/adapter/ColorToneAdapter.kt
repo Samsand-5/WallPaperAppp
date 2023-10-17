@@ -26,6 +26,7 @@ class ColorToneAdapter(val requireContext: Context, val listTheColorTone: ArrayL
     }
 
     override fun onBindViewHolder(holder: ColorToneViewHolder, position: Int) {
-        Glide.with(requireContext).load(listTheColorTone[position].link).into(holder.cardBack)
+        val color = listTheColorTone[position].color
+        holder.cardBack.setCardBackgroundColor()
     }
 }
