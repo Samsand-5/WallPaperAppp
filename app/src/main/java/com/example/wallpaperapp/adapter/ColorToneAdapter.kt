@@ -13,7 +13,7 @@ import com.example.wallpaperapp.R
 class ColorToneAdapter(val requireContext: Context, val listTheColorTone: ArrayList<ColorToneModel>) : RecyclerView.Adapter<ColorToneAdapter.ColorToneViewHolder>() {
 
     inner class ColorToneViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val imageView = itemView.findViewById<ImageView>(R.id.bom_image)
+        val imageView = itemView.findViewById<ImageView>(R.id.item_card)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ColorToneViewHolder {
