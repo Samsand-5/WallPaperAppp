@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wallpaperapp.Model.BomModel
 import com.example.wallpaperapp.Model.ColorToneModel
 import com.example.wallpaperapp.adapter.BomAdapter
+import com.example.wallpaperapp.adapter.ColorToneAdapter
 import com.example.wallpaperapp.databinding.FragmentHomeBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -44,7 +45,7 @@ class HomeFragment : Fragment() {
 
             binding.rcvTct.layoutManager =
                 LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
-            binding.rcvTct.adapter =
+            binding.rcvTct.adapter = ColorToneAdapter(requireContext(), listTheColorTone)
         }
 
         return binding.root

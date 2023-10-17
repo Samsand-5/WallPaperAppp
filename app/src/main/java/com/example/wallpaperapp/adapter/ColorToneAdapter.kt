@@ -7,24 +7,24 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.wallpaperapp.Model.BomModel
+import com.example.wallpaperapp.Model.ColorToneModel
 import com.example.wallpaperapp.R
 
-class ColorToneAdapter(val requireContext: Context, val listBestOfTheMonth: ArrayList<BomModel>) : RecyclerView.Adapter<ColorToneAdapter.bomViewHolder>() {
+class ColorToneAdapter(val requireContext: Context, val listTheColorTone: ArrayList<ColorToneModel>) : RecyclerView.Adapter<ColorToneAdapter.ColorToneViewHolder>() {
 
-    inner class bomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    inner class ColorToneViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val imageView = itemView.findViewById<ImageView>(R.id.bom_image)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): bomViewHolder {
-        return bomViewHolder(LayoutInflater.from(requireContext).inflate(R.layout.item_bom,parent,false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ColorToneViewHolder {
+        return ColorToneViewHolder(LayoutInflater.from(requireContext).inflate(R.layout.item_bom,parent,false))
     }
 
     override fun getItemCount(): Int {
-        return listBestOfTheMonth.size
+        return listTheColorTone.size
     }
 
-    override fun onBindViewHolder(holder: bomViewHolder, position: Int) {
-        Glide.with(requireContext).load(listBestOfTheMonth[position].link).into(holder.imageView)
+    override fun onBindViewHolder(holder: ColorToneViewHolder, position: Int) {
+        Glide.with(requireContext).load(listTheColorTone[position].link).into(holder.imageView)
     }
 }
