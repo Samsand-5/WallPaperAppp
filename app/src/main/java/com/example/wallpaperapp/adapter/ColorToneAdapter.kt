@@ -17,7 +17,7 @@ class ColorToneAdapter(val requireContext: Context, val listTheColorTone: ArrayL
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ColorToneViewHolder {
-        return ColorToneViewHolder(LayoutInflater.from(requireContext).inflate(R.layout.item_bom,parent,false))
+        return ColorToneViewHolder(LayoutInflater.from(requireContext).inflate(R.layout.item_tct,parent,false))
     }
 
     override fun getItemCount(): Int {
