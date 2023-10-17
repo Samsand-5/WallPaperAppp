@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.wallpaperapp.Model.ColorToneModel
@@ -13,7 +14,7 @@ import com.example.wallpaperapp.R
 class ColorToneAdapter(val requireContext: Context, val listTheColorTone: ArrayList<ColorToneModel>) : RecyclerView.Adapter<ColorToneAdapter.ColorToneViewHolder>() {
 
     inner class ColorToneViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val imageView = itemView.findViewById<ImageView>(R.id.item_card)
+        val cardBack = itemView.findViewById<CardView>(R.id.item_card)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ColorToneViewHolder {
@@ -25,6 +26,6 @@ class ColorToneAdapter(val requireContext: Context, val listTheColorTone: ArrayL
     }
 
     override fun onBindViewHolder(holder: ColorToneViewHolder, position: Int) {
-        Glide.with(requireContext).load(listTheColorTone[position].link).into(holder.imageView)
+        Glide.with(requireContext).load(listTheColorTone[position].link).into(holder.cardBack)
     }
 }
