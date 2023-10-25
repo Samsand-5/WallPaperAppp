@@ -1,6 +1,7 @@
 package com.example.wallpaperapp.Model
 
 data class catModel(
-    val id: String="",
+    val name: String="",
     val link: String="",
+    val id: String=""
 )
