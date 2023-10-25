@@ -48,6 +48,17 @@ class HomeFragment : Fragment() {
             binding.rcvTct.adapter = ColorToneAdapter(requireContext(), listTheColorTone)
         }
 
+
+        db.collection("categories").addSnapshotListener { value, error ->
+            val listTheColorTone = arrayListOf<ColorToneModel>()
+            val data = value?.toObjects(ColorToneModel::class.java)
+            listTheColorTone.addAll(data!!)
+
+            binding.rcvTct.layoutManager =
+                LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
+            binding.rcvTct.adapter = ColorToneAdapter(requireContext(), listTheColorTone)
+        }
+
         return binding.root
     }
 
