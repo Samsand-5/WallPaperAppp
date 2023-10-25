@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wallpaperapp.Model.BomModel
 import com.example.wallpaperapp.Model.ColorToneModel
+import com.example.wallpaperapp.Model.catModel
 import com.example.wallpaperapp.adapter.BomAdapter
 import com.example.wallpaperapp.adapter.ColorToneAdapter
 import com.example.wallpaperapp.databinding.FragmentHomeBinding
@@ -50,7 +51,7 @@ class HomeFragment : Fragment() {
 
 
         db.collection("categories").addSnapshotListener { value, error ->
-
+            val listCategories = arrayListOf<catModel>()
         }
 
         return binding.root
