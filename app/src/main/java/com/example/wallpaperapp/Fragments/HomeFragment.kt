@@ -52,6 +52,7 @@ class HomeFragment : Fragment() {
 
         db.collection("categories").addSnapshotListener { value, error ->
             val listCategories = arrayListOf<catModel>()
+            val data = value?.toObjects(catModel::class.java)
         }
 
         return binding.root
