@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.wallpaperapp.Model.CatModel
@@ -13,7 +14,8 @@ import com.example.wallpaperapp.R
 class CatAdapter(val requireContext: Context, val listCategories: ArrayList<CatModel>) : RecyclerView.Adapter<CatAdapter.CatViewHolder>() {
 
     inner class CatViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val imageView = itemView.findViewById<ImageView>(R.id.bom_image)
+        val imageView = itemView.findViewById<ImageView>(R.id.cat_image)
+        val name = itemView.findViewById<TextView>(R.id.cat_name)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CatViewHolder {
@@ -25,6 +27,7 @@ class CatAdapter(val requireContext: Context, val listCategories: ArrayList<CatM
     }
 
     override fun onBindViewHolder(holder: CatViewHolder, position: Int) {
+        holder.name.text = listCategories[position].name
         Glide.with(requireContext).load(listCategories[position].link).into(holder.imageView)
     }
 }

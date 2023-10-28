@@ -15,6 +15,7 @@
             android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/cat_image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/assassin"
@@ -26,6 +27,7 @@
                 android:background="#66000000" />
 
             <TextView
+                android:id="@+id/cat_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
