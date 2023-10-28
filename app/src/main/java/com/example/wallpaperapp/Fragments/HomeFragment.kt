@@ -11,6 +11,7 @@ import com.example.wallpaperapp.Model.BomModel
 import com.example.wallpaperapp.Model.ColorToneModel
 import com.example.wallpaperapp.Model.CatModel
 import com.example.wallpaperapp.adapter.BomAdapter
+import com.example.wallpaperapp.adapter.CatAdapter
 import com.example.wallpaperapp.adapter.ColorToneAdapter
 import com.example.wallpaperapp.databinding.FragmentHomeBinding
 import com.google.firebase.firestore.FirebaseFirestore
