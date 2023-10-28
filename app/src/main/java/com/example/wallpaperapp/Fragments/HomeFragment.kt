@@ -5,10 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wallpaperapp.Model.BomModel
 import com.example.wallpaperapp.Model.ColorToneModel
-import com.example.wallpaperapp.Model.catModel
+import com.example.wallpaperapp.Model.CatModel
 import com.example.wallpaperapp.adapter.BomAdapter
 import com.example.wallpaperapp.adapter.ColorToneAdapter
 import com.example.wallpaperapp.databinding.FragmentHomeBinding
@@ -51,9 +52,13 @@ class HomeFragment : Fragment() {
 
 
         db.collection("categories").addSnapshotListener { value, error ->
-            val listCategories = arrayListOf<catModel>()
-            val data = value?.toObjects(catModel::class.java)
+            val listCategories = arrayListOf<CatModel>()
+            val data = value?.toObjects(CatModel::class.java)
             listCategories.addAll(data!!)
+
+            binding.rcvCat.layoutManager =
+                GridLayoutManager(requireContext(),2)
+            binding.rcvCat.adapter = CatAdapter(requireContext(), listCategories)
         }
 
         return binding.root
