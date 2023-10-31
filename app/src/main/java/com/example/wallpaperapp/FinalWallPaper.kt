@@ -12,5 +12,13 @@ class FinalWallPaper : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityFinalWallPaperBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.btnDownload.setOnClickListener {
+
+        }
+
+        binding.btnSetWallpaper.setOnClickListener {
+
+        }
     }
 }
