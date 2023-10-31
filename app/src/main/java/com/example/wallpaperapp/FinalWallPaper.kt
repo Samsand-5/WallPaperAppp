@@ -2,10 +2,15 @@ package com.example.wallpaperapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.wallpaperapp.databinding.ActivityFinalWallPaperBinding
+import com.example.wallpaperapp.databinding.ActivityMainBinding
 
 class FinalWallPaper : AppCompatActivity() {
+
+    lateinit var binding: ActivityFinalWallPaperBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_final_wall_paper)
+        binding = ActivityFinalWallPaperBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 }
