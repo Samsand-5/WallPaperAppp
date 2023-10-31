@@ -22,18 +22,22 @@
         android:layout_marginBottom="20dp">
 
         <ImageView
+            android:id="@+id/btnDownload"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
             android:layout_marginBottom="20dp"
             android:layout_marginStart="85dp"
             android:src="@drawable/ic_download"/>
 
 
         <ImageView
+            android:id="@+id/btnSetWallpaper"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginBottom="20dp"
             android:layout_marginEnd="85dp"
             android:src="@drawable/ic_brush"/>
