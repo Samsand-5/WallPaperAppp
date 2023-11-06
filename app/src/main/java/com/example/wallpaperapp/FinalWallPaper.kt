@@ -13,6 +13,8 @@ class FinalWallPaper : AppCompatActivity() {
         binding = ActivityFinalWallPaperBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val url = intent.getStringExtra("link")
+
         binding.btnDownload.setOnClickListener {
 
         }
