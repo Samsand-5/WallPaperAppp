@@ -1,5 +1,6 @@
 package com.example.wallpaperapp
 
+import android.app.WallpaperManager
 import android.content.ContentValues
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -47,7 +48,14 @@ class FinalWallPaper : AppCompatActivity() {
         }
 
         binding.btnSetWallpaper.setOnClickListener {
+            val result: kotlinx.coroutines.Deferred<Bitmap?> = GlobalScope.async {
+                urlImage.toBitmap(url)
+            }
 
+            GlobalScope.launch(Dispatchers.Main) {
+                val wallpaperManager = WallpaperManager.getInstance(applicationContext)
+                wallpaperManager.setBitmap(result.await())
+            }
         }
     }
 
