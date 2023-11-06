@@ -30,6 +30,8 @@ class BomAdapter(val requireContext: Context, val listBestOfTheMonth: ArrayList<
         Glide.with(requireContext).load(listBestOfTheMonth[position].link).into(holder.imageView)
         holder.itemView.setOnClickListener {
             val intent = Intent(requireContext,FinalWallPaper::class.java)
+
+            requireContext.startActivity(intent)
         }
     }
 }
