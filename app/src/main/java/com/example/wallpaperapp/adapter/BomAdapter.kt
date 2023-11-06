@@ -28,6 +28,8 @@ class BomAdapter(val requireContext: Context, val listBestOfTheMonth: ArrayList<
 
     override fun onBindViewHolder(holder: bomViewHolder, position: Int) {
         Glide.with(requireContext).load(listBestOfTheMonth[position].link).into(holder.imageView)
+
+        //shows the only wallpaper which user want to download
         holder.itemView.setOnClickListener {
             val intent = Intent(requireContext,FinalWallPaper::class.java)
             intent.putExtra("link",listBestOfTheMonth[position].link)
