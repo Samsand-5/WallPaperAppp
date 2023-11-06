@@ -1,12 +1,14 @@
 package com.example.wallpaperapp.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.wallpaperapp.FinalWallPaper
 import com.example.wallpaperapp.Model.BomModel
 import com.example.wallpaperapp.R
 
@@ -26,5 +28,8 @@ class BomAdapter(val requireContext: Context, val listBestOfTheMonth: ArrayList<
 
     override fun onBindViewHolder(holder: bomViewHolder, position: Int) {
         Glide.with(requireContext).load(listBestOfTheMonth[position].link).into(holder.imageView)
+        holder.itemView.setOnClickListener {
+            val intent = Intent(requireContext,FinalWallPaper::class.java)
+        }
     }
 }
