@@ -7,7 +7,16 @@
     tools:context=".CatActivity">
 
 
+    <LinearLayout
+        android:id="@+id/LinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical">
+
     <TextView
+        android:id="@+id/catTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Abstract"
@@ -16,5 +25,26 @@
         android:textStyle="bold"
         android:textSize="39dp"
         android:textColor="@color/wallpaperprimary"/>
+
+
+    <TextView
+        android:id="@+id/catCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="69 Wallpapers Available "
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:textStyle="normal"
+        android:textSize="25dp"
+        android:textColor="@color/wallpaperprimary"/>
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        app:layout_constraintTop_toBottomOf="@id/LinearLayout"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
