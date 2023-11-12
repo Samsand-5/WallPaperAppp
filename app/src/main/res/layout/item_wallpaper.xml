@@ -2,6 +2,10 @@
 <com.makeramen.roundedimageview.RoundedImageView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="165dp"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:riv_corner_radius="38dip"
+    android:background="@drawable/assassin"
+
     android:layout_margin="10dp">
 
     
