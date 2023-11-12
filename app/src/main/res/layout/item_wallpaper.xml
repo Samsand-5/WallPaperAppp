@@ -3,10 +3,12 @@
     android:layout_width="165dp"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:riv_corner_radius="38dip"
+    app:riv_corner_radius="10dip"
     android:background="@drawable/assassin"
-
-    android:layout_margin="10dp">
+    app:riv_mutate_background="true"
+    app:riv_tile_mode="repeat"
+    android:layout_margin="10dp"
+    android:id="@+id/catImage">
 
     
 </com.makeramen.roundedimageview.RoundedImageView>
