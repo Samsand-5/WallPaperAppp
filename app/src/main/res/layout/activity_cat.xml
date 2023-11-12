@@ -6,4 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".CatActivity">
 
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Abstract"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:textStyle="bold"
+        android:textSize="39dp"
+        android:textColor="@color/wallpaperprimary"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
