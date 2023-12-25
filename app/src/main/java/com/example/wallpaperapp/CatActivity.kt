@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.wallpaperapp.Model.CatModel
 import com.example.wallpaperapp.adapter.CatAdapter
 import com.example.wallpaperapp.databinding.ActivityCatBinding
@@ -28,6 +29,8 @@ class CatActivity : AppCompatActivity() {
             val data = value?.toObjects(CatModel::class.java)
                 listCatWallpapers.addAll(data!!)
 
+                binding.catRev.layoutManager=
+                    StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
         }
 
     }
