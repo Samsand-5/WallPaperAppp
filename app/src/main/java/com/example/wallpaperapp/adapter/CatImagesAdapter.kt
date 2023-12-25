@@ -11,11 +11,12 @@ import com.bumptech.glide.Glide
 import com.example.wallpaperapp.FinalWallPaper
 import com.example.wallpaperapp.Model.BomModel
 import com.example.wallpaperapp.R
+import com.makeramen.roundedimageview.RoundedImageView
 
 class CatImagesAdapter(val requireContext: Context, val listBestOfTheMonth: ArrayList<BomModel>) : RecyclerView.Adapter<CatImagesAdapter.bomViewHolder>() {
 
     inner class bomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val imageView = itemView.findViewById<ImageView>(R.id.bom_image)
+        val imageView = itemView.findViewById<RoundedImageView>(R.id.catImage)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): bomViewHolder {
