@@ -19,16 +19,16 @@ class CatActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         db = FirebaseFirestore.getInstance()
-        val uid = Intent.getStringExtra("uid")
+        val uid = intent.getStringExtra("uid")
 
-        db.collection("categories").document(uid!!).addSnapshotListener { value, error ->
+        db.collection("categories").document(uid!!).collection("wallpaper")
+            .addSnapshotListener { value, error ->
+
             val listCategories = arrayListOf<CatModel>()
             val data = value?.toObjects(CatModel::class.java)
             listCategories.addAll(data!!)
 
-
         }
-
 
     }
 }
