@@ -19,7 +19,7 @@ class CatImagesAdapter(val requireContext: Context, val listBestOfTheMonth: Arra
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): bomViewHolder {
-        return bomViewHolder(LayoutInflater.from(requireContext).inflate(R.layout.item_bom,parent,false))
+        return bomViewHolder(LayoutInflater.from(requireContext).inflate(R.layout.item_wallpaper,parent,false))
     }
 
     override fun getItemCount(): Int {
