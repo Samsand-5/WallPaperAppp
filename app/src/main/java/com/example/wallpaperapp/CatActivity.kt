@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.wallpaperapp.Model.BomModel
 import com.example.wallpaperapp.Model.CatModel
 import com.example.wallpaperapp.adapter.CatAdapter
 import com.example.wallpaperapp.databinding.ActivityCatBinding
@@ -25,12 +26,13 @@ class CatActivity : AppCompatActivity() {
         db.collection("categories").document(uid!!).collection("wallpaper")
             .addSnapshotListener { value, error ->
 
-            val listCatWallpapers = arrayListOf<CatModel>()
-            val data = value?.toObjects(CatModel::class.java)
+            val listCatWallpapers = arrayListOf<BomModel>()
+            val data = value?.toObjects(BomModel::class.java)
                 listCatWallpapers.addAll(data!!)
 
                 binding.catRev.layoutManager=
                     StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
+                binding.catRev.adapter
         }
 
     }
