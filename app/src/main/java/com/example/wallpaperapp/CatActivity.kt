@@ -24,9 +24,9 @@ class CatActivity : AppCompatActivity() {
         db.collection("categories").document(uid!!).collection("wallpaper")
             .addSnapshotListener { value, error ->
 
-            val listCategories = arrayListOf<CatModel>()
+            val listCatWallpapers = arrayListOf<CatModel>()
             val data = value?.toObjects(CatModel::class.java)
-            listCategories.addAll(data!!)
+                listCatWallpapers.addAll(data!!)
 
         }
 
