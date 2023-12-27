@@ -35,7 +35,8 @@ class CatAdapter(val requireContext: Context, val listCategories: ArrayList<CatM
         //shows the only wallpaper which user want to download
         holder.itemView.setOnClickListener {
             val intent = Intent(requireContext, FinalWallPaper::class.java)
-            intent.putExtra("link",listCategories[position].link)
+            intent.putExtra("uid",listCategories[position].id)
+            intent.putExtra("uid",)
             requireContext.startActivity(intent)
         }
     }
