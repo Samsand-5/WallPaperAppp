@@ -36,7 +36,7 @@ class CatAdapter(val requireContext: Context, val listCategories: ArrayList<CatM
         holder.itemView.setOnClickListener {
             val intent = Intent(requireContext, FinalWallPaper::class.java)
             intent.putExtra("uid",listCategories[position].id)
-            intent.putExtra("uid",)
+            intent.putExtra("name",listCategories[position].name)
             requireContext.startActivity(intent)
         }
     }

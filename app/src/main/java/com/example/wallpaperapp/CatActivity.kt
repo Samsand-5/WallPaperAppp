@@ -23,6 +23,7 @@ class CatActivity : AppCompatActivity() {
 
         db = FirebaseFirestore.getInstance()
         val uid = intent.getStringExtra("uid")
+        val name = intent.getStringExtra("name")
 
         db.collection("categories").document(uid!!).collection("wallpaper")
             .addSnapshotListener { value, error ->
@@ -30,6 +31,9 @@ class CatActivity : AppCompatActivity() {
             val listCatWallpapers = arrayListOf<BomModel>()
             val data = value?.toObjects(BomModel::class.java)
                 listCatWallpapers.addAll(data!!)
+
+                binding.catTitle.text=name.toString()
+
 
                 binding.catRev.layoutManager=
                     StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
