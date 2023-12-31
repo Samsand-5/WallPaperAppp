@@ -31,7 +31,7 @@ class DownloadFragment : Fragment() {
         allFiles = targetFiles.listFiles()!!
 
         for (data in allFiles){
-            imageList.add(data.toString())
+            imageList.add(data.absolutePath)
         }
 
         return binding.root
