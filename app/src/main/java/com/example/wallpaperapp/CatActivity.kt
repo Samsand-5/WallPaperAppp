@@ -1,13 +1,9 @@
 package com.example.wallpaperapp
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.wallpaperapp.Model.BomModel
-import com.example.wallpaperapp.Model.CatModel
-import com.example.wallpaperapp.adapter.CatAdapter
 import com.example.wallpaperapp.adapter.CatImagesAdapter
 import com.example.wallpaperapp.databinding.ActivityCatBinding
 import com.google.firebase.firestore.FirebaseFirestore

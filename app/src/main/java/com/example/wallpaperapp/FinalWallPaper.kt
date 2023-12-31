@@ -30,7 +30,7 @@ class FinalWallPaper : AppCompatActivity() {
         binding = ActivityFinalWallPaperBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val url = intent!!.getStringExtra("link")
+        val url = intent.getStringExtra("link")
 
         val urlImage = URL(url)
 
