@@ -21,14 +21,14 @@ class DownloadFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentDownloadBinding.inflate(layoutInflater,container,false)
 
-        val allFiles:Array<File>
-        val imageList= arrayListOf<String>()
+        val allFiles : Array<File>
+        val imageList = arrayListOf<String>()
 
-        val targetPath=
+        val targetPath =
             Environment.getExternalStorageDirectory().absolutePath+"/Pictures/Amoled wallpaper"
 
-        val targetFiles=File(targetPath)
-
+        val targetFiles = File(targetPath)
+        allFiles = targetFiles.listFiles()!!
 
         return binding.root
     }
