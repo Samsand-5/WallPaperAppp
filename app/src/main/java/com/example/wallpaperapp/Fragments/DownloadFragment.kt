@@ -1,12 +1,14 @@
 package com.example.wallpaperapp.Fragments
 
 import android.os.Bundle
+import android.os.Environment
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.wallpaperapp.R
 import com.example.wallpaperapp.databinding.FragmentDownloadBinding
+import java.io.File
 
 
 class DownloadFragment : Fragment() {
@@ -18,6 +20,13 @@ class DownloadFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentDownloadBinding.inflate(layoutInflater,container,false)
+
+        val allFiles:Array<File>
+        val imageList= arrayListOf<String>()
+
+        val target=Environment.getExternalStorageDirectory().absolutePath+"/Pi"
+
+
         return binding.root
     }
 
