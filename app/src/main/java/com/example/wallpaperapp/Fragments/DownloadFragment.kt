@@ -30,6 +30,10 @@ class DownloadFragment : Fragment() {
         val targetFiles = File(targetPath)
         allFiles = targetFiles.listFiles()!!
 
+        for (data in allFiles){
+            imageList.add(data.toString())
+        }
+
         return binding.root
     }
 
