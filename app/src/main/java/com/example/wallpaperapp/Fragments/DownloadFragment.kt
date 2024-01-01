@@ -34,6 +34,10 @@ class DownloadFragment : Fragment() {
             imageList.add(data.absolutePath)
         }
 
+        for(i in imageList){
+
+        }
+
         return binding.root
     }
 
