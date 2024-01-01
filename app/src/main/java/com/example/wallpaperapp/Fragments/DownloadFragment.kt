@@ -6,7 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.wallpaperapp.R
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.wallpaperapp.adapter.CollectionAdapter
 import com.example.wallpaperapp.databinding.FragmentDownloadBinding
 import java.io.File
 
@@ -34,9 +35,8 @@ class DownloadFragment : Fragment() {
             imageList.add(data.absolutePath)
         }
 
-        for(i in imageList){
-
-        }
+        binding.revCollection.layoutManager=StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
+        binding.revCollection.adapter=CollectionAdapter(requireContext(),imageList)
 
         return binding.root
     }
